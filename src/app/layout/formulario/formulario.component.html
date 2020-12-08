@@ -1,0 +1,149 @@
+<main role="main" class="container">
+
+  <div class="starter-template">
+
+    <div class="card" *ngFor="let curso of cursos">
+      <div class="card-body">
+        <h6 class="card-title">
+          <button type="button" class="btn btn-sm btn-warning" data-toggle="tooltip" data-placement="top" title="ID del curso">
+            <strong>{{curso.id}}</strong>
+          </button>
+          &nbsp;
+          {{curso.name}}
+          &nbsp;
+          <button type="button" class="btn btn-outline-dark" (click)="editarCurso(curso)">Editar</button>
+        </h6>
+
+        <p>ID de las clases correspondientes: {{curso.classes?.join(', ')}}</p>
+
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Hours</th>
+              <th scope="col">CourseID</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let clase of clases" >
+              <td *ngIf="curso.id == clase.idcurso">{{clase.id}}</td>
+              <td *ngIf="curso.id == clase.idcurso">{{clase.name}}</td>
+              <td *ngIf="curso.id == clase.idcurso">{{clase.description}}</td>
+              <td *ngIf="curso.id == clase.idcurso">{{clase.horas}}</td>
+              <td *ngIf="curso.id == clase.idcurso">{{clase.idcurso}}</td>
+              <td *ngIf="curso.id == clase.idcurso">
+                <button type="button" class="btn btn-outline-dark" (click)="editarClase(clase)">Editar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="agregar-clase">
+          <hr>
+          <button class="btn btn-success" data-toggle="modal" data-target="#modalClase">Agregar Clase</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button trigger modal curso-->
+    <div class="agregar-curso">
+      <button class="btn btn-block btn-outline-primary" data-toggle="modal" data-target="#modalCurso">Agregar Curso</button>
+    </div>
+
+  </div>
+
+  <hr>
+
+
+  <!-- Modal curso-->
+  <div class="modal fade" id="modalCurso" tabindex="-1" aria-labelledby="modalCursoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalCursoLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Form -->
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <label for="inputID">ID</label>
+                <input type="text" class="form-control" id="inputID"
+                name="inputID" placeholder="Ingresar Id" [(ngModel)]="nuevoCurso.id">
+              </div>
+              <div class="form-group col-md-9">
+                <label for="inputNombre">Name</label>
+                <input type="text" class="form-control" id="inputNombre"
+                name="inputNombre" placeholder="Ingresar nombre" [(ngModel)]="nuevoCurso.name">
+              </div>
+            </div>
+          </form>
+          <!-- Form -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button class="btn btn-primary" (click)="agregarNuevoCurso()">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal clase-->
+  <div class="modal fade" id="modalClase" tabindex="-1" aria-labelledby="modalClaseLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalClaseLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Form -->
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-2">
+                <label for="inputID">ID</label>
+                <input type="text" class="form-control" id="inputID"
+                name="inputID" placeholder="Ingresar texto" [(ngModel)]="nuevaClase.id">
+              </div>
+              <div class="form-group col-md-3">
+                <label for="inputNombre">Name</label>
+                <input type="text" class="form-control" id="inputNombre"
+                name="inputNombre" placeholder="Ingresar texto" [(ngModel)]="nuevaClase.name">
+              </div>
+              <div class="form-group col-md-3">
+                <label for="inputDescription">Description</label>
+                <input type="text" class="form-control" id="inputDescription"
+                name="inputDescription" placeholder="Ingresar texto" [(ngModel)]="nuevaClase.description">
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputHours">Hours</label>
+                <input type="text" class="form-control" id="inputHours"
+                name="inputHours" placeholder="Ingresar texto" [(ngModel)]="nuevaClase.horas">
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputCourseID">CourseID</label>
+                <input type="text" class="form-control" id="inputCourseID"
+                name="inputCourseID" placeholder="Ingresar texto" [(ngModel)]="nuevaClase.idcurso">
+              </div>
+            </div>
+          </form>
+          <!-- Form -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button class="btn btn-primary" (click)="addToTable()">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</main><!-- /.container -->

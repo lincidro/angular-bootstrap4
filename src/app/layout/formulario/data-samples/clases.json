@@ -1,0 +1,46 @@
+{
+  "lista": [
+    {
+      "id": "1",
+      "name": "1era Clase",
+      "description": "1era Clase de Cálculo I",
+      "horas": "1.5",
+      "idcurso": "1"
+    },
+    {
+      "id": "2",
+      "name": "2da Clase",
+      "description": "Segunda Clase de Cálculo I",
+      "horas": "2.5",
+      "idcurso": "1"
+    },
+    {
+      "id": "3",
+      "name": "1era Clase",
+      "description": "1era Clase de Java",
+      "horas": "1.5",
+      "idcurso": "2"
+    },
+    {
+      "id": "4",
+      "name": "2da Clase",
+      "description": "Segunda clase de Java",
+      "horas": "1.5",
+      "idcurso": "2"
+    },
+    {
+      "id": "5",
+      "name": "3ra Clase",
+      "description": "Tercera clase de Java",
+      "horas": "2.5",
+      "idcurso": "2"
+    },
+    {
+      "id": "6",
+      "name": "IAR",
+      "description": "Clase de inteligencia Artificial y Robótica",
+      "horas": "4",
+      "idcurso": "3"
+    }
+  ]
+}

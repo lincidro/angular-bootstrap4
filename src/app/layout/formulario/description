@@ -1,0 +1,7 @@
+Una persona realiza una matricula
+Una matricula tiene varios cursos
+Cada curso tiene varias clases
+Cada clase tiene un nombre, Descripcion y Horas
+
+Puedo agregar cursos
+A los cursos le puedo agregar clases

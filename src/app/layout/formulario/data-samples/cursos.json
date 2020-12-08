@@ -1,0 +1,19 @@
+{
+  "lista": [
+    {
+      "id": "1",
+      "name": "Cálculo I",
+      "classes":["1","2"]
+    },
+    {
+      "id": "2",
+      "name": "Introducción a Java",
+      "classes":["3","4","5"]
+    },
+    {
+      "id": "3",
+      "name": "IAR",
+      "classes":["6"]
+    }
+  ]
+}
