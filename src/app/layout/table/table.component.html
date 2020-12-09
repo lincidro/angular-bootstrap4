@@ -1,0 +1,44 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th *ngFor="let itemCabecera of nombresCabecera" scope="col">{{itemCabecera}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let clase of clases" >
+      <ng-container *ngIf="curso.id === clase.idcurso">
+        <td *ngFor="let nombreDetalle of nombresDetalles">
+          <span>{{clase[nombreDetalle]}}</span>
+        </td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>
+
+
+<!--
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Hours</th>
+      <th scope="col">CourseID</th>
+      <th scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items" >
+      <td *ngIf="curso.id == clase.idcurso">{{clase.id}}</td>
+      <td *ngIf="curso.id == clase.idcurso">{{clase.name}}</td>
+      <td *ngIf="curso.id == clase.idcurso">{{clase.description}}</td>
+      <td *ngIf="curso.id == clase.idcurso">{{clase.horas}}</td>
+      <td *ngIf="curso.id == clase.idcurso">{{clase.idcurso}}</td>
+      <td *ngIf="curso.id == clase.idcurso">
+        <button type="button" class="btn btn-outline-dark" (click)="editarClase(clase)">Editar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+-->

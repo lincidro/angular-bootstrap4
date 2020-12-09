@@ -14,12 +14,16 @@ export class FormularioComponent implements OnInit {
 
   cursos: Curso[] = listadoCursos;
   clases: Clase[] = listadoClases;
-  matricula: Matricula = {cycle: "2020-1", courses: this.cursos};
+  matricula: Matricula = {cycle: '2020-1', courses: this.cursos};
 
-  //nuevos elementos
+  // Nuevos elementos
   nuevoCurso: any = {};
   nuevaClase: any = {};
   clasesXcurso: Clase[] = [];
+
+  // Para la tabla
+  cabeceraTabla = ['#','Name','Description','Hours','CourseID','Options'];
+  nombresDetalles = ['id', 'name', 'description', 'horas','idcurso',''];
 
   constructor() { }
 
